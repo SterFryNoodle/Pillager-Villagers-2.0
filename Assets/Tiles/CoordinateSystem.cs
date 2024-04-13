@@ -11,7 +11,7 @@ public class CoordinateSystem : MonoBehaviour
     [SerializeField] Color blockedColor = Color.gray;    
     
     TextMeshPro labelCoords;
-    Vector2Int coordinates = new Vector2Int(); //Initialize variable w/ "new" keyword as it is a  normal
+    Vector2Int coordinates = new Vector2Int(); //Initialize variable w/ "new" keyword as it is a normal
                                                //struct type and NOT a monobehavior class.
     EnemyDestination waypoint;
 
