@@ -11,9 +11,10 @@ public class Node
     public bool isPath;
 
     public Node connectedTo;
-
+        
     public Node(Vector2Int coords, bool isWalkable) //constructor
     {
-
+        this.coordinates = coords; //Sets both arguement variable names to their respective initialized variables.
+        this.isTreadable = isWalkable;
     }
 }
