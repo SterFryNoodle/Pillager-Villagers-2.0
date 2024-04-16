@@ -8,19 +8,21 @@ using TMPro;
 public class CoordinateSystem : MonoBehaviour
 {
     [SerializeField] Color defaultColor = Color.white;
-    [SerializeField] Color blockedColor = Color.gray;    
-    
+    [SerializeField] Color blockedColor = Color.gray;
+    [SerializeField] Color exploredColor = Color.yellow;
+    [SerializeField] Color pathColor = new Color(1f, .6f, .1f); //Creates a new color that isn't the predetermined primary colors.
+
     TextMeshPro labelCoords;
     Vector2Int coordinates = new Vector2Int(); //Initialize variable w/ "new" keyword as it is a normal
                                                //struct type and NOT a monobehavior class.
-    EnemyDestination waypoint;
+    GridManager gridManager;
 
     void Awake()
     {
+        gridManager = FindObjectOfType<GridManager>();
         labelCoords = GetComponent<TextMeshPro>();
         labelCoords.enabled = false;
-
-        waypoint = GetComponentInParent<EnemyDestination>();
+        
         DisplayCoordinates(); //Displays current coords text once in play mode; Doesn't update.
     }
 
@@ -46,9 +48,24 @@ public class CoordinateSystem : MonoBehaviour
 
     void SetCoordinateColor()
     {
-        if(waypoint.IsPlaceable)
+        if (gridManager == null)
+        {
+            return;
+        }
+
+        Node node = gridManager.GetNode(coordinates); //Set local variable to coords stored in GetNode().
+
+        if(node.isTreadable)
         {
             labelCoords.color = defaultColor;
+        }
+        else if(node.isPath)
+        {
+            labelCoords.color = pathColor;
+        }
+        else if(node.isExplored)
+        {
+            labelCoords.color = exploredColor;
         }
         else
         {

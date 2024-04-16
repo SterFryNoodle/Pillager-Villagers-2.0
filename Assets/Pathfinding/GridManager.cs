@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    Dictionary<Vector2Int, Node> grid = new Dictionary<Vector2Int, Node>(); //Initializing a dictionary w/ Vector2Int type key & Node type value.
-
     [SerializeField] Vector2Int gridSize;
 
+    Dictionary<Vector2Int, Node> grid = new Dictionary<Vector2Int, Node>(); //Initializing a dictionary w/ Vector2Int type key & Node type value.
+    
     void Awake()
     {
         CreateGrid();
 
+    }
+
+    public Node GetNode(Vector2Int coordinates) //Sends in the key as an arguement and returns value of a specific node.
+    {
+        if(grid.ContainsKey(coordinates)) // Check grid to see if it contains key needed.
+        {
+            return grid[coordinates];
+        }
+        return null;
     }
 
     void CreateGrid()
@@ -20,8 +29,8 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < gridSize.y; y++)
             {
-                Vector2Int coordinates = new Vector2Int(x,y); //initializing a key holding the coordinates being iterated.
-                grid.Add(coordinates, new Node(coordinates, true));
+                Vector2Int coordinates = new Vector2Int(x,y); //Initializing a key holding the coordinates being iterated.
+                grid.Add(coordinates, new Node(coordinates, true)); //Pairs each key with the value "true" and adds it to the grid.
                 Debug.Log(grid[coordinates].coordinates + " is " + grid[coordinates].isTreadable); //Sending the dictionary variable & passing in the key to
                                                                                                    //access the node script.
             }
