@@ -2968,11 +2968,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_text
-      value: 0,-1
+      value: 0,-40
       objectReference: {fileID: 0}
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_fontColor.b

@@ -21,7 +21,7 @@ public class CoordinateSystem : MonoBehaviour
     {
         gridManager = FindObjectOfType<GridManager>();
         labelCoords = GetComponent<TextMeshPro>();
-        labelCoords.enabled = false;
+        labelCoords.enabled = true;
         
         DisplayCoordinates(); //Displays current coords text once in play mode; Doesn't update.
     }
@@ -55,14 +55,14 @@ public class CoordinateSystem : MonoBehaviour
 
         Node node = gridManager.GetNode(coordinates); //Set local variable to coords stored in GetNode().
 
-        if (node != null) //If node is not found, return early.
+        if (node == null) //If node is not found, return early.
         {
             return;
         }
 
-        if(node.isTreadable)
+        if(!node.isTreadable)
         {
-            labelCoords.color = defaultColor;
+            labelCoords.color = blockedColor;
         }
         else if(node.isPath)
         {
@@ -74,7 +74,7 @@ public class CoordinateSystem : MonoBehaviour
         }
         else
         {
-            labelCoords.color = blockedColor;
+            labelCoords.color = defaultColor;
         }
     }
 
