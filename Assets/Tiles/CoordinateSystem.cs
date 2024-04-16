@@ -48,12 +48,17 @@ public class CoordinateSystem : MonoBehaviour
 
     void SetCoordinateColor()
     {
-        if (gridManager == null)
+        if (gridManager == null) //If gridmanager is not found, return early.
         {
             return;
         }
 
         Node node = gridManager.GetNode(coordinates); //Set local variable to coords stored in GetNode().
+
+        if (node != null) //If node is not found, return early.
+        {
+            return;
+        }
 
         if(node.isTreadable)
         {
