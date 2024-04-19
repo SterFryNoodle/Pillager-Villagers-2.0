@@ -31,7 +31,7 @@ public class PathFinder : MonoBehaviour
 
     void Start()
     {
-        ExploreNeighbors();
+        BreadthFirstSearch();
     }
 
     void ExploreNeighbors()
@@ -44,10 +44,34 @@ public class PathFinder : MonoBehaviour
             
             if (grid.ContainsKey(neighborCoords))
             {
-                neighbors.Add(grid[neighborCoords]);
+                neighbors.Add(grid[neighborCoords]);                                
+            }
+        }
 
-                grid[neighborCoords].isExplored = true; //Delete this line after testing.
-                grid[currentSearchNode.coordinates].isPath = true;
+        for(int j = 0; j < neighbors.Count; j++)
+        {
+            if (!explored.ContainsKey(neighbors[j].coordinates) && neighbors[j].isTreadable)
+            {
+                explored.Add(neighbors[j].coordinates, neighbors[j]);
+                frontier.Enqueue(neighbors[j]);
+            }
+        }
+    }
+
+    void BreadthFirstSearch()
+    {
+        bool isRunning = true;
+
+        frontier.Enqueue(startingNode);
+        explored.Add(startingPt, startingNode);
+
+        while( frontier.Count > 0 && isRunning == true )
+        {
+            currentSearchNode = frontier.Dequeue(); //Sets currentSearchNode to first node in queue.
+            ExploreNeighbors();
+            if(currentSearchNode.coordinates == endPt)
+            {
+                isRunning = false;
             }
         }
     }
