@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PathFinder : MonoBehaviour
 {
-    [SerializeField] Node currentSearchNode;
-    Vector2Int[] directions = {Vector2Int.right, Vector2Int.left, Vector2Int.up, Vector2Int.down};    
-    GridManager gridManager;
+    [SerializeField] Vector2Int startingPt;
+    [SerializeField] Vector2Int endPt;
+    Node startingNode;
+    Node endNode;
 
+    Node currentSearchNode;
+    Vector2Int[] directions = {Vector2Int.right, Vector2Int.left, Vector2Int.up, Vector2Int.down};    
+    
+    GridManager gridManager;
     Dictionary<Vector2Int, Node> grid;
 
     private void Awake()
