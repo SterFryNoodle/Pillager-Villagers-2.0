@@ -8,12 +8,14 @@ public class PathFinder : MonoBehaviour
     [SerializeField] Vector2Int endPt;
     Node startingNode;
     Node endNode;
+    Dictionary<Vector2Int, Node> explored = new Dictionary<Vector2Int, Node>();
+    Queue<Node> frontier = new Queue<Node>();
 
     Node currentSearchNode;
     Vector2Int[] directions = {Vector2Int.right, Vector2Int.left, Vector2Int.up, Vector2Int.down};    
     
     GridManager gridManager;
-    Dictionary<Vector2Int, Node> grid;
+    Dictionary<Vector2Int, Node> grid = new Dictionary<Vector2Int, Node>();
 
     private void Awake()
     {
@@ -22,6 +24,9 @@ public class PathFinder : MonoBehaviour
         {
             grid = gridManager.Grid; //Accesses the dictionary initialized in GridManager.
         }
+
+        startingNode = new Node(startingPt, true);
+        endNode = new Node(endPt, true); //Initializing both node variables.
     }
 
     void Start()
