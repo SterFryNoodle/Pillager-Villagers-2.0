@@ -65,7 +65,7 @@ public class PathFinder : MonoBehaviour
         frontier.Enqueue(startingNode);
         explored.Add(startingPt, startingNode);
 
-        while( frontier.Count > 0 && isRunning == true )
+        while( frontier.Count > 0 && isRunning)
         {
             currentSearchNode = frontier.Dequeue(); //Sets currentSearchNode to first node in queue.
             currentSearchNode.isExplored = true;
