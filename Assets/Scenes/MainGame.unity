@@ -19404,6 +19404,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
+      propertyPath: endPt.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
+      propertyPath: endPt.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7635701345760636727, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: m_Name
       value: ObjectPool

@@ -68,6 +68,7 @@ public class PathFinder : MonoBehaviour
         while( frontier.Count > 0 && isRunning == true )
         {
             currentSearchNode = frontier.Dequeue(); //Sets currentSearchNode to first node in queue.
+            currentSearchNode.isExplored = true;
             ExploreNeighbors();
             if(currentSearchNode.coordinates == endPt)
             {
