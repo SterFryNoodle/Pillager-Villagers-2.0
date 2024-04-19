@@ -15,7 +15,7 @@ public class PathFinder : MonoBehaviour
         gridManager = FindObjectOfType<GridManager>();
         if (gridManager != null )
         {
-            grid = gridManager.Grid;
+            grid = gridManager.Grid; //Accesses the dictionary initialized in GridManager.
         }
     }
 
@@ -30,7 +30,7 @@ public class PathFinder : MonoBehaviour
 
         for (int i = 0; i < directions.Length; i++)
         {
-            Vector2Int neighborCoords = currentSearchNode.coordinates + directions[i];
+            Vector2Int neighborCoords = currentSearchNode.coordinates + directions[i]; //coordinates stored in Node script added to current direction iteration
             
             if (grid.ContainsKey(neighborCoords))
             {
