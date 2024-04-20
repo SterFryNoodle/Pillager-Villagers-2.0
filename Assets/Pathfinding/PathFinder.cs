@@ -23,14 +23,13 @@ public class PathFinder : MonoBehaviour
         if (gridManager != null )
         {
             grid = gridManager.Grid; //Accesses the dictionary initialized in GridManager.
-        }
-
-        startingNode = new Node(startingPt, true);
-        endNode = new Node(endPt, true); //Initializing both node variables.
+        }        
     }
 
     void Start()
     {
+        startingNode = gridManager.Grid[startingPt];
+        endNode = gridManager.Grid[endPt]; //Initializing both node variables.
         BreadthFirstSearch();
     }
 
