@@ -80,12 +80,14 @@ public class CoordinateSystem : MonoBehaviour
 
     void DisplayCoordinates()
     {
-        #if UNITY_EDITOR
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x); //Rounds x-coord of object's parent to nearest int and stores it into x of coordinates variable.
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z); //This grabs z-coord of object's parent instead of y on the tile coord system and stores
-                                                                                                               //into the y of coordinates variable.
-        #endif //Solves error and tells compiler that this code is meant for editor mode only.
-
+        if(gridManager == null)
+        { 
+            return; 
+        }
+        
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / gridManager.UnityGridSize); //Rounds x-coord of object's parent to nearest int and stores it into x of coordinates variable.
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / gridManager.UnityGridSize); //This grabs z-coord of object's parent instead of y on the tile coord system and stores
+                                                                                                   //into the y of coordinates variable.        
         labelCoords.text = coordinates.x + "," + coordinates.y;
     }
 
