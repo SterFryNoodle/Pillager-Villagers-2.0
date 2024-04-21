@@ -10,7 +10,7 @@ public class CoordinateSystem : MonoBehaviour
     [SerializeField] Color defaultColor = Color.white;
     [SerializeField] Color blockedColor = Color.gray;
     [SerializeField] Color exploredColor = Color.yellow;
-    [SerializeField] Color pathColor = new Color(1f, .6f, .1f); //Creates a new color that isn't the predetermined primary colors.
+    [SerializeField] Color pathColor = new Color(1f, .5f, 0f); //Creates a new color that isn't the predetermined primary colors.
 
     TextMeshPro labelCoords;
     Vector2Int coordinates = new Vector2Int(); //Initialize variable w/ "new" keyword as it is a normal

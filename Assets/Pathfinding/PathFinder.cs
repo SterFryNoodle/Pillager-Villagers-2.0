@@ -31,6 +31,7 @@ public class PathFinder : MonoBehaviour
         startingNode = gridManager.Grid[startingPt];
         endNode = gridManager.Grid[endPt]; //Initializing both node variables.
         BreadthFirstSearch();
+        BuildPath();
     }
 
     void ExploreNeighbors()
@@ -51,6 +52,7 @@ public class PathFinder : MonoBehaviour
         {
             if (!explored.ContainsKey(neighbors[j].coordinates) && neighbors[j].isTreadable)
             {
+                neighbors[j].connectedTo = currentSearchNode; //Sets connectedTo variable in Node to currentSearchNode.
                 explored.Add(neighbors[j].coordinates, neighbors[j]);
                 frontier.Enqueue(neighbors[j]);
             }
@@ -61,7 +63,7 @@ public class PathFinder : MonoBehaviour
     {
         bool isRunning = true;
 
-        frontier.Enqueue(startingNode);
+        frontier.Enqueue(startingNode); //queue starting node.
         explored.Add(startingPt, startingNode);
 
         while( frontier.Count > 0 && isRunning)
@@ -74,5 +76,23 @@ public class PathFinder : MonoBehaviour
                 isRunning = false;
             }
         }
+    }
+
+    List<Node> BuildPath()
+    {
+        List<Node> path = new List<Node>(); //Initialize local list.
+        Node currentNode = endNode;
+
+        path.Add(currentNode); //Add endNode to path list.
+        currentNode.isPath = true; //Sets isPath to true and color for nodes in isPath turns orange.
+
+        while( currentNode.connectedTo != null) // Adds nodes connected to destination node to the path list and backtracks to start.
+        {
+            currentNode = currentNode.connectedTo;
+            path.Add(currentNode);
+            currentNode.isPath = true;
+        }
+        path.Reverse();
+        return path;
     }
 }

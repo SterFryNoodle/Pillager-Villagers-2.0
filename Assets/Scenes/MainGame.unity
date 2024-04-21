@@ -2968,27 +2968,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_text
-      value: 0,-40
+      value: 0,-1
       objectReference: {fileID: 0}
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_fontColor.b
-      value: 0.5
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_fontColor.g
-      value: 0.5
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_fontColor.r
-      value: 0.5
+      value: 0.21960786
       objectReference: {fileID: 0}
     - target: {fileID: 331107473652281042, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4286611584
+      value: 4281874488
       objectReference: {fileID: 0}
     - target: {fileID: 850146343849449388, guid: c37b24e3af25e3246a72592ef09c0f97, type: 3}
       propertyPath: m_Name
