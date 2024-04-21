@@ -38,7 +38,7 @@ public class GridManager : MonoBehaviour
         }
     }
 
-    public Vector2Int GetPositionFromCoords(Vector3 position)
+    public Vector2Int GetCoordsFromPosition(Vector3 position)
     {
         Vector2Int coordinates = new Vector2Int();
         
@@ -48,7 +48,7 @@ public class GridManager : MonoBehaviour
         return coordinates;
     }
 
-    public Vector3 GetCoordsFromPosition(Vector2Int coords)
+    public Vector3 GetPositionFromCoords(Vector2Int coords)
     {
         Vector3 position = new Vector3();
 
