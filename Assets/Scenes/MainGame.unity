@@ -19406,7 +19406,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: endPt.x
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: endPt.y

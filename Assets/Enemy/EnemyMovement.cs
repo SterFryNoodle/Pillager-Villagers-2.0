@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] List<EnemyDestination> path = new List<EnemyDestination>(); //Initialize variable type List.
+    [SerializeField] List<Tile> path = new List<Tile>(); //Initialize variable type List.
     [SerializeField][Range(0f, 5f)] float enemySpeed = 1f;
 
     Enemy enemy;
@@ -30,7 +30,7 @@ public class EnemyMovement : MonoBehaviour
 
         foreach(Transform destinationChild in destinationParent.transform) //Finds the transform of each child object from the parent.
         {
-            EnemyDestination enemyDestination = destinationChild.GetComponent<EnemyDestination>(); 
+            Tile enemyDestination = destinationChild.GetComponent<Tile>(); 
 
             if (enemyDestination != null) //Safeguard check for EnemyDestination component in each child object before adding into path list.
             {
@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator FollowPath() //Return type used with foreach loops when used in coroutines.
     {
-        foreach(EnemyDestination destination in path)
+        foreach(Tile destination in path)
         {
             Vector3 startPosition = transform.position;
             Vector3 endPosition = destination.transform.position;
