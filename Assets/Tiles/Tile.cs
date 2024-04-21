@@ -15,20 +15,17 @@ public class Tile : MonoBehaviour
     void Awake()
     {
         gridManager = FindObjectOfType<GridManager>();
-    }
 
-    void Start()
-    {
         if (gridManager != null)
         {
             coordinates = gridManager.GetCoordsFromPosition(transform.position);
 
-            if(!isPlaceable)
+            if (!isPlaceable)
             {
                 gridManager.BlockNode(coordinates);
             }
         }
-    }
+    }    
 
     void OnMouseDown()
     {
