@@ -27,9 +27,9 @@ public class GridManager : MonoBehaviour
 
     void CreateGrid()
     {
-        for(int x = 0; x < gridSize.x; x++) //This nested loop will iterate through a grid by every column starting @ 0,0.
+        for(int x = 0; x <= gridSize.x; x++) //This nested loop will iterate through a grid by every column starting @ 0,0.
         {
-            for (int y = 0; y < gridSize.y; y++)
+            for (int y = 0; y <= gridSize.y; y++)
             {
                 Vector2Int coordinates = new Vector2Int(x,y); //Initializing a key holding the coordinates being iterated.
                 grid.Add(coordinates, new Node(coordinates, true)); //Pairs each key with the value "true" and adds it to the grid.                
