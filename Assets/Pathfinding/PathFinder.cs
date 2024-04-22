@@ -30,8 +30,14 @@ public class PathFinder : MonoBehaviour
     {
         startingNode = gridManager.Grid[startingPt];
         endNode = gridManager.Grid[endPt]; //Initializing both node variables.
+        UpdatePath();
+    }
+
+    public List<Node> UpdatePath()
+    {
+        gridManager.ResetNode();
         BreadthFirstSearch();
-        BuildPath();
+        return BuildPath();
     }
 
     void ExploreNeighbors()
@@ -61,6 +67,9 @@ public class PathFinder : MonoBehaviour
 
     void BreadthFirstSearch()
     {
+        frontier.Clear();
+        explored.Clear();
+        
         bool isRunning = true;
 
         frontier.Enqueue(startingNode); //queue starting node.
@@ -94,5 +103,24 @@ public class PathFinder : MonoBehaviour
         }
         path.Reverse();
         return path;
+    }
+
+    public bool WillBlockPath(Vector2Int coordinates) //If it returns true, coordinates sent in are "blocked" and will not be able to place anything ontop.
+    {
+        bool previousState = grid[coordinates].isTreadable;
+
+        if(grid.ContainsKey(coordinates))
+        {
+            grid[coordinates].isTreadable = false;
+            List<Node> newPath = UpdatePath();
+            grid[coordinates].isTreadable = previousState; //Safeguard to switch isTreadable's state back to true, since previousState should always be set to true.
+
+            if(newPath.Count <= 1) //Will recalculate the path if it does not reach past the first node.
+            {
+                UpdatePath();
+                return true;
+            }            
+        }
+        return false;
     }
 }
