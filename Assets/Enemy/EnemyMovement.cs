@@ -5,10 +5,10 @@ using UnityEngine;
 
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
-{
-    [SerializeField] List<Tile> path = new List<Tile>(); //Initialize variable type List.
+{    
     [SerializeField][Range(0f, 5f)] float enemySpeed = 1f;
 
+    List<Node> path = new List<Node>(); //Initialize variable type List.
     Enemy enemy;
     GridManager gridManager;
     PathFinder pathFinder;
@@ -30,22 +30,12 @@ public class EnemyMovement : MonoBehaviour
     {
         path.Clear(); //ensures path does not build ontop of itself or repeat.
 
-        GameObject destinationParent = GameObject.FindGameObjectWithTag("Path"); //Storing path parent gameObject w/ "path" tag
-
-        foreach(Transform destinationChild in destinationParent.transform) //Finds the transform of each child object from the parent.
-        {
-            Tile enemyDestination = destinationChild.GetComponent<Tile>(); 
-
-            if (enemyDestination != null) //Safeguard check for EnemyDestination component in each child object before adding into path list.
-            {
-                path.Add(enemyDestination); //Finding the EnemyDestination component in each object child under & adding into the list.
-            }
-        }
+        path = pathFinder.UpdatePath();
     }
 
     void ReturnToBeginning() //Sets enemies to first tile set in the path.
     {
-        transform.position = path[0].transform.position;
+        transform.position = gridManager.GetPositionFromCoords(pathFinder.StartingPt);
     }
 
     void AtEndOfPath()
@@ -56,10 +46,10 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator FollowPath() //Return type used with foreach loops when used in coroutines.
     {
-        foreach(Tile destination in path)
+        for(int i = 0; i < path.Count; i++)
         {
             Vector3 startPosition = transform.position;
-            Vector3 endPosition = destination.transform.position;
+            Vector3 endPosition = gridManager.GetPositionFromCoords(path[i].coordinates);
             float travelPercent = 0f;
 
             transform.LookAt(endPosition); // rotates object based on forward movement of wherever the next destination is.

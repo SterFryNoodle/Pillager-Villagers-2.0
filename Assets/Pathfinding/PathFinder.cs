@@ -5,7 +5,10 @@ using UnityEngine;
 public class PathFinder : MonoBehaviour
 {
     [SerializeField] Vector2Int startingPt;
+    public Vector2Int StartingPt { get { return startingPt; } }
     [SerializeField] Vector2Int endPt;
+    public Vector2Int EndingPt { get { return endPt; } }
+
     Node startingNode;
     Node endNode;
     Dictionary<Vector2Int, Node> explored = new Dictionary<Vector2Int, Node>();
@@ -23,13 +26,15 @@ public class PathFinder : MonoBehaviour
         if (gridManager != null )
         {
             grid = gridManager.Grid; //Accesses the dictionary initialized in GridManager.
-        }        
+            startingNode = grid[startingPt];
+            endNode = grid[endPt]; //Initializing both node variables.
+            startingNode.isTreadable = true;
+            endNode.isTreadable = true;
+        }
     }
 
     void Start()
-    {
-        startingNode = gridManager.Grid[startingPt];
-        endNode = gridManager.Grid[endPt]; //Initializing both node variables.
+    {        
         UpdatePath();
     }
 
