@@ -72,6 +72,9 @@ public class PathFinder : MonoBehaviour
 
     void BreadthFirstSearch()
     {
+        startingNode.isTreadable = true;
+        endNode.isTreadable = true;
+
         frontier.Clear();
         explored.Clear();
         
