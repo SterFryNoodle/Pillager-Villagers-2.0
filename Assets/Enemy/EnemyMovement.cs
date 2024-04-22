@@ -10,6 +10,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField][Range(0f, 5f)] float enemySpeed = 1f;
 
     Enemy enemy;
+    GridManager gridManager;
+    PathFinder pathFinder;
     void OnEnable() //Resets the function everytime the gameObject attached is re-enabled.
     {
         FindPath();
@@ -17,9 +19,11 @@ public class EnemyMovement : MonoBehaviour
         StartCoroutine(FollowPath());
     }
 
-    void Start()
+    void Awake()
     {
         enemy = GetComponent<Enemy>();
+        gridManager = FindObjectOfType<GridManager>();
+        pathFinder = FindObjectOfType<PathFinder>();
     }
 
     void FindPath()
