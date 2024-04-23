@@ -36,9 +36,9 @@ public class Tile : MonoBehaviour
     {
         if (gridManager.GetNode(coordinates).isTreadable && !pathFinder.WillBlockPath(coordinates))
         {
-            bool isInstatiated = towerPrefab.CreateTower(towerPrefab, transform.position);            
+            bool isInstantiated = towerPrefab.CreateTower(towerPrefab, transform.position);            
             
-            if(isInstatiated)
+            if(isInstantiated)
             {
                 gridManager.BlockNode(coordinates); //send coords of tile that tower was instantiated ontop of to set isTreadable to true.
                 pathFinder.NotifyRecievers();

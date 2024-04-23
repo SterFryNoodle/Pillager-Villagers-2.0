@@ -34,14 +34,21 @@ public class PathFinder : MonoBehaviour
     }
 
     void Start()
-    {        
-        UpdatePath();
+    {
+        UpdatePath(startingPt);
     }
 
     public List<Node> UpdatePath()
     {
         gridManager.ResetNode();
-        BreadthFirstSearch();
+        BreadthFirstSearch(startingPt);
+        return BuildPath();
+    }
+
+    public List<Node> UpdatePath(Vector2Int coordinates)
+    {
+        gridManager.ResetNode();
+        BreadthFirstSearch(coordinates);
         return BuildPath();
     }
 
@@ -70,7 +77,7 @@ public class PathFinder : MonoBehaviour
         }
     }
 
-    void BreadthFirstSearch()
+    void BreadthFirstSearch(Vector2Int coordinates)
     {
         startingNode.isTreadable = true;
         endNode.isTreadable = true;
@@ -80,8 +87,8 @@ public class PathFinder : MonoBehaviour
         
         bool isRunning = true;
 
-        frontier.Enqueue(startingNode); //queue starting node.
-        explored.Add(startingPt, startingNode);
+        frontier.Enqueue(grid[coordinates]); //queue starting node.
+        explored.Add(coordinates, grid[coordinates]);
 
         while( frontier.Count > 0 && isRunning)
         {
