@@ -1462,7 +1462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342158896247845025, guid: 7b1a2b70b423a084989cc22bccb425df, type: 3}
       propertyPath: isPlaceable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3152,7 +3152,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342158896247845025, guid: 7b1a2b70b423a084989cc22bccb425df, type: 3}
       propertyPath: isPlaceable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11352,6 +11352,10 @@ PrefabInstance:
     - target: {fileID: 5244342052052400416, guid: 7b1a2b70b423a084989cc22bccb425df, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4291085508
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342158896247845025, guid: 7b1a2b70b423a084989cc22bccb425df, type: 3}
+      propertyPath: isPlaceable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22562,7 +22566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342158896247845025, guid: 7b1a2b70b423a084989cc22bccb425df, type: 3}
       propertyPath: isPlaceable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23698,6 +23702,10 @@ PrefabInstance:
     - target: {fileID: 5244342052052400416, guid: 7b1a2b70b423a084989cc22bccb425df, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4291085508
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342158896247845025, guid: 7b1a2b70b423a084989cc22bccb425df, type: 3}
+      propertyPath: isPlaceable
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25485,7 +25493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: startingPt.x
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: startingPt.y
