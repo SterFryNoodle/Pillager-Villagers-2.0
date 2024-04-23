@@ -18,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
     {
         ReturnToBeginning();
         RecalculatePath(true);        
-        StartCoroutine(FollowPath());
     }
 
     void Awake()
@@ -40,9 +39,11 @@ public class EnemyMovement : MonoBehaviour
         {
             coordinates = gridManager.GetCoordsFromPosition(transform.position);
         }
-        path.Clear(); //ensures path does not build ontop of itself or repeat.
 
+        StopAllCoroutines();
+        path.Clear(); //ensures path does not build ontop of itself or repeat.
         path = pathFinder.UpdatePath(coordinates);
+        StartCoroutine(FollowPath()); // start new coroutine only after path has been updated.
     }
 
     void ReturnToBeginning() //Sets enemies to first tile set in the path.
