@@ -59,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator FollowPath() //Return type used with foreach loops when used in coroutines.
     {
-        for(int i = 0; i < path.Count; i++)
+        for(int i = 1; i < path.Count; i++)
         {
             Vector3 startPosition = transform.position;
             Vector3 endPosition = gridManager.GetPositionFromCoords(path[i].coordinates);

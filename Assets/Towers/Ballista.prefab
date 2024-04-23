@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 4774564251958329481, guid: 3a4cc92317e0eec4a9dc45cbc366db70, type: 3}
-  towerRange: 15
+  towerRange: 25
   boltParticles: {fileID: 2446060285867721384}
   weapon: {fileID: 6603403479251775710}
 --- !u!114 &7201889410575413529
@@ -147,6 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goldCost: 75
+  buildTimer: 1
 --- !u!1 &4809909692356504507
 GameObject:
   m_ObjectHideFlags: 0
