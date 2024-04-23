@@ -35,7 +35,7 @@ public class PathFinder : MonoBehaviour
 
     void Start()
     {
-        UpdatePath(startingPt);
+        UpdatePath();
     }
 
     public List<Node> UpdatePath()
