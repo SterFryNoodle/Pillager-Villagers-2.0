@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Enemy))]
 public class EnemyMovement : MonoBehaviour
@@ -12,10 +13,11 @@ public class EnemyMovement : MonoBehaviour
     Enemy enemy;
     GridManager gridManager;
     PathFinder pathFinder;
+
     void OnEnable() //Resets the function everytime the gameObject attached is re-enabled.
     {
-        RecalculatePath();
         ReturnToBeginning();
+        RecalculatePath(true);        
         StartCoroutine(FollowPath());
     }
 
@@ -25,12 +27,22 @@ public class EnemyMovement : MonoBehaviour
         gridManager = FindObjectOfType<GridManager>();
         pathFinder = FindObjectOfType<PathFinder>();
     }
-
-    void RecalculatePath()
+    
+    void RecalculatePath(bool resetPath)
     {
+        Vector2Int coordinates = new Vector2Int();
+
+        if(resetPath)
+        {
+            coordinates = pathFinder.StartingPt;
+        }
+        else
+        {
+            coordinates = gridManager.GetCoordsFromPosition(transform.position);
+        }
         path.Clear(); //ensures path does not build ontop of itself or repeat.
 
-        path = pathFinder.UpdatePath();
+        path = pathFinder.UpdatePath(coordinates);
     }
 
     void ReturnToBeginning() //Sets enemies to first tile set in the path.
