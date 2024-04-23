@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b5f0db56cf13e4bb3562631c6649b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: []
   enemySpeed: 1
 --- !u!114 &1297826902387643527
 MonoBehaviour:
@@ -146,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 2
-  difficultyLevel: 2
+  difficultyLevel: 1
 --- !u!114 &-455762566937422051
 MonoBehaviour:
   m_ObjectHideFlags: 0
