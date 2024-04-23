@@ -14,7 +14,7 @@ public class EnemyMovement : MonoBehaviour
     PathFinder pathFinder;
     void OnEnable() //Resets the function everytime the gameObject attached is re-enabled.
     {
-        FindPath();
+        RecalculatePath();
         ReturnToBeginning();
         StartCoroutine(FollowPath());
     }
@@ -26,7 +26,7 @@ public class EnemyMovement : MonoBehaviour
         pathFinder = FindObjectOfType<PathFinder>();
     }
 
-    void FindPath()
+    void RecalculatePath()
     {
         path.Clear(); //ensures path does not build ontop of itself or repeat.
 
