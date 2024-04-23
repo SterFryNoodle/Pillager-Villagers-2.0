@@ -41,6 +41,7 @@ public class Tile : MonoBehaviour
             if(isInstatiated)
             {
                 gridManager.BlockNode(coordinates); //send coords of tile that tower was instantiated ontop of to set isTreadable to true.
+                pathFinder.NotifyRecievers();
             }            
         }
     }        
