@@ -25483,6 +25483,18 @@ PrefabInstance:
       propertyPath: spawnTimer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1399428559495815377, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
+      propertyPath: pool.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399428559495815377, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
+      propertyPath: pool.Array.data[0]
+      value: 
+      objectReference: {fileID: 5816761963758538202, guid: 3a4cc92317e0eec4a9dc45cbc366db70, type: 3}
+    - target: {fileID: 1399428559495815377, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
+      propertyPath: objectPoolItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: endPt.x
       value: 9
