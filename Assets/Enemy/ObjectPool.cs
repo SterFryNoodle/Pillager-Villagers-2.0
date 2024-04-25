@@ -8,6 +8,8 @@ public class ObjectPool : MonoBehaviour
     [SerializeField][Range(0, 50)] int poolSize = 5;
     [SerializeField] GameObject enemyPrefab;
 
+    int waveCounter;
+
     GameObject[] pool;
 
     void Awake()
@@ -24,7 +26,13 @@ public class ObjectPool : MonoBehaviour
     {
         while (true)
         {
+            waveCounter++;
             EnableObjectInPool();
+            
+            if (waveCounter % (poolSize * 3) == 0)
+            {
+                yield return new WaitUntil(StartNextWave);
+            }
 
             if (spawnTimer > 0f)
             {
@@ -32,7 +40,7 @@ public class ObjectPool : MonoBehaviour
             }            
         }
     }
-     void EnableObjectInPool()
+    void EnableObjectInPool()
     {
         for (int j = 0; j < pool.Length; j++)
         {
@@ -40,7 +48,7 @@ public class ObjectPool : MonoBehaviour
             {
                 pool[j].SetActive(true);
                 return; //resets the loop early instead of waiting for enemy object to reach end of path to spawn another.
-            }            
+            }
         }
     }
 
@@ -48,10 +56,21 @@ public class ObjectPool : MonoBehaviour
     {
         pool = new GameObject[poolSize]; //Initializes pool array with size.
 
-        for(int i = 0; i < pool.Length; i++)
+        for (int i = 0; i < pool.Length; i++)
         {
             pool[i] = Instantiate(enemyPrefab, transform);
             pool[i].SetActive(false); //Sets gameObjects within array as disabled by default.
         }
-    }    
+    }
+
+    bool StartNextWave()
+    {
+        bool isStarting = false;
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            isStarting = true;
+        }
+        return isStarting;
+    }
 }
