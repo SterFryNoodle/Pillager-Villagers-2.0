@@ -29,8 +29,7 @@ public class TowerPlacement : MonoBehaviour
             bank.Withdraw(goldCost);
             Instantiate(tower.gameObject, position, Quaternion.identity);
             return true;
-        }
-                
+        }                        
         return false;
     }
     

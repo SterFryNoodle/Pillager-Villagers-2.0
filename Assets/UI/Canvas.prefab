@@ -169,7 +169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Not Enough Gold To Place Tower.
+  m_text: Not enough gold to place tower.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c1b5a99d9a2c0542aa72c5829a1aa23, type: 2}
   m_sharedMaterial: {fileID: -9003619544680055152, guid: 7c1b5a99d9a2c0542aa72c5829a1aa23, type: 2}
@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 891631ad9af08b04bb067675fb8e3153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textTimer: 1
 --- !u!1 &9214901148162848789
 GameObject:
   m_ObjectHideFlags: 0

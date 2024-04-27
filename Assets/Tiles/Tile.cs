@@ -18,6 +18,7 @@ public class Tile : MonoBehaviour
     {
         gridManager = FindObjectOfType<GridManager>();
         pathFinder = FindObjectOfType<PathFinder>();
+        display = FindObjectOfType<DisplayInsufficientFunds>();
     }
 
     void Start()
@@ -43,6 +44,7 @@ public class Tile : MonoBehaviour
             {
                 gridManager.BlockNode(coordinates); //send coords of tile that tower was instantiated ontop of to set isTreadable to true.
                 pathFinder.NotifyRecievers();
+                display.DisplayInsufficientGold(false);
             }
             else
             {
