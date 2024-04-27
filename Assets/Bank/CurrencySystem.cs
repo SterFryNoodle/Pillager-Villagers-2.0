@@ -8,7 +8,7 @@ public class CurrencySystem : MonoBehaviour
 {
     [SerializeField] int startingBalance = 150;
     [SerializeField] TextMeshProUGUI currencyDisplay;
-
+        
     int currentBalance;
     
     public int CurrentBalance { get { return currentBalance; } } //Creates a property of the private variable currentBalance.
@@ -17,6 +17,7 @@ public class CurrencySystem : MonoBehaviour
     {
         currentBalance = startingBalance;
         DisplayAvailableCurrency();
+        
     }
 
     public void Deposit(int amount)
@@ -40,7 +41,7 @@ public class CurrencySystem : MonoBehaviour
     {
         currencyDisplay.text = "Gold:" + currentBalance; //displays currency to UI.
     }
-
+        
     void ReloadScene()
     {       
         Scene currentScene = SceneManager.GetActiveScene();

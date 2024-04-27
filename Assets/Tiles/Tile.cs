@@ -11,6 +11,7 @@ public class Tile : MonoBehaviour
                                                             //w/o changing access of the variable itself and allowing change to anything else in this script. 
     GridManager gridManager;
     PathFinder pathFinder;
+    DisplayInsufficientFunds display;
     Vector2Int coordinates = new Vector2Int();
 
     void Awake()
@@ -42,7 +43,11 @@ public class Tile : MonoBehaviour
             {
                 gridManager.BlockNode(coordinates); //send coords of tile that tower was instantiated ontop of to set isTreadable to true.
                 pathFinder.NotifyRecievers();
-            }            
+            }
+            else
+            {
+                display.DisplayInsufficientGold(true);
+            }
         }
     }        
 }

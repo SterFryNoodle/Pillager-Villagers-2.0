@@ -9,16 +9,16 @@ public class TowerPlacement : MonoBehaviour
     [SerializeField] int buildTimer = 2;
     
     CurrencySystem bank;
-
-    private void Start()
+    
+    void Start()
     {
-        StartCoroutine(BuildTower());
+        StartCoroutine(BuildTower());        
     }
-
+    
     public bool CreateTower(TowerPlacement tower, Vector3 position)
     {
         bank = FindObjectOfType<CurrencySystem>();
-        
+
         if (bank == null)
         {
             return false;
@@ -30,10 +30,10 @@ public class TowerPlacement : MonoBehaviour
             Instantiate(tower.gameObject, position, Quaternion.identity);
             return true;
         }
-        Debug.Log("Not enough gold to place tower.");
-        return false;        
+                
+        return false;
     }
-
+    
     IEnumerator BuildTower()
     {
         foreach(Transform child in transform)
