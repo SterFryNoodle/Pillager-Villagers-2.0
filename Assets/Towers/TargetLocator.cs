@@ -38,7 +38,7 @@ public class TargetLocator : MonoBehaviour
     {
         float targetDistance = Vector3.Distance(transform.position, target.position); //Another distance check.
 
-        if(targetDistance < towerRange)
+        if(targetDistance < towerRange) //fix bug of towers attacking enemies after they are disabled.
         {
             Attack(true);
         }
