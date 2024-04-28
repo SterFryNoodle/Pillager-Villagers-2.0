@@ -25487,17 +25487,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6969577949736816903, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
-      propertyPath: poolSize
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6969577949736816903, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
-      propertyPath: spawnTimer
-      value: 5
-      objectReference: {fileID: 0}
+      propertyPath: enemyPrefab
+      value: 
+      objectReference: {fileID: 6043755507018623398, guid: 6df86a85f7d2f9d448ff0ccb3f08c697, type: 3}
     - target: {fileID: 6969577949736816903, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: enemyPrefab2
       value: 
-      objectReference: {fileID: 6043755507018623398, guid: 6df86a85f7d2f9d448ff0ccb3f08c697, type: 3}
+      objectReference: {fileID: 5816761963758538202, guid: 3a4cc92317e0eec4a9dc45cbc366db70, type: 3}
     - target: {fileID: 7635701345760636727, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: m_Name
       value: ObjectPool
