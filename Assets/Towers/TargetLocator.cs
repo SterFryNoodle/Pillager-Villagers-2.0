@@ -35,14 +35,14 @@ public class TargetLocator : MonoBehaviour
         target = closestEnemy;
     }
     void AimWeapon()
-    {
+    {       
         float targetDistance = Vector3.Distance(transform.position, target.position); //Another distance check.
 
         if(targetDistance < towerRange) //fix bug of towers attacking enemies after they are disabled.
         {
             Attack(true);
         }
-        else
+        else if(targetDistance > towerRange || target.position == null)
         {
             Attack(false);
         }

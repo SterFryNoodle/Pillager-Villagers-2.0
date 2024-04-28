@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class ObjectPoolZombie : MonoBehaviour
 {
     [SerializeField][Range(0.1f, 15f)] float spawnTimer = 1f;
     [SerializeField][Range(0, 50)] int poolSize = 5;
     [SerializeField] GameObject enemyPrefab;
 
-    //int waveCounter;
+    int waveCounter;
 
     GameObject[] pool;
 
@@ -26,18 +26,17 @@ public class ObjectPool : MonoBehaviour
     {
         while (true)
         {
-            //waveCounter++;
-            EnableObjectInPool();
-            
-            /*if (waveCounter % (poolSize * 3) == 0)
+            waveCounter++;            
+
+            if (waveCounter % (poolSize * 2) == 0)
             {
-                yield return new WaitUntil(StartNextWave);
-            } */
+                EnableObjectInPool();
+            } 
 
             if (spawnTimer > 0f)
             {
                 yield return new WaitForSeconds(spawnTimer);
-            }            
+            }
         }
     }
     void EnableObjectInPool()
