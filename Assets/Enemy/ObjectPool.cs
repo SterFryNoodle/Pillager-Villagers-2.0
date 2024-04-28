@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPoolZomb : MonoBehaviour
+public class ObjectPool : MonoBehaviour
 {
-    [SerializeField][Range(0.1f, 15f)] float spawnTimer = 1f;
+    [SerializeField][Range(0.1f, 15f)] float spawnTimer = 1f;    
     [SerializeField][Range(0, 50)] int poolSize = 5;
     [SerializeField] GameObject enemyPrefab;
+    [SerializeField] GameObject enemyPrefab2;
 
     //int waveCounter;
 
@@ -28,16 +29,16 @@ public class ObjectPoolZomb : MonoBehaviour
         {
             //waveCounter++;
             EnableObjectInPool();
-            
-            /*if (waveCounter % (poolSize * 3) == 0)
+
+            /*if (waveCounter % (poolSize * 2) == 0)
             {
-                yield return new WaitUntil(StartNextWave);
-            } */
+                yield return new WaitForSeconds(waveTimer);
+            }*/
 
             if (spawnTimer > 0f)
             {
                 yield return new WaitForSeconds(spawnTimer);
-            }            
+            }
         }
     }
     void EnableObjectInPool()
@@ -58,8 +59,16 @@ public class ObjectPoolZomb : MonoBehaviour
 
         for (int i = 0; i < pool.Length; i++)
         {
-            pool[i] = Instantiate(enemyPrefab, transform);
-            pool[i].SetActive(false); //Sets gameObjects within array as disabled by default.
+            if(i % 3 == 0)
+            {
+                pool[i] = Instantiate(enemyPrefab2, transform);
+                pool[i].SetActive(false);
+            }
+            else
+            {
+                pool[i] = Instantiate(enemyPrefab, transform);
+                pool[i].SetActive(false); //Sets gameObjects within array as disabled by default.
+            }
         }
     }
 

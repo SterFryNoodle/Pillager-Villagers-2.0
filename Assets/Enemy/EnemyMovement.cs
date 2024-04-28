@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour
     List<Node> path = new List<Node>(); //Initialize variable type List.
     Enemy enemy;
     GridManager gridManager;
-    PathFinder pathFinder;
+    [SerializeField] PathFinder pathFinder;
 
     void OnEnable() //Resets the function everytime the gameObject attached is re-enabled.
     {

@@ -92,9 +92,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4774564251958329481}
-  - component: {fileID: 7580539056676656890}
-  - component: {fileID: 1297826902387643527}
   - component: {fileID: -455762566937422051}
+  - component: {fileID: 1297826902387643527}
+  - component: {fileID: 7580539056676656890}
   - component: {fileID: 6933338321771673140}
   m_Layer: 0
   m_Name: Enemy
@@ -119,33 +119,6 @@ Transform:
   - {fileID: 1432249432044852165}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7580539056676656890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5816761963758538202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b5f0db56cf13e4bb3562631c6649b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemySpeed: 0.75
---- !u!114 &1297826902387643527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5816761963758538202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e60b1187740cdfc49b66caf0ff14a3ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHitPoints: 3
-  difficultyLevel: 2
 --- !u!114 &-455762566937422051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +133,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   killReward: 50
   goldPenalty: 25
+--- !u!114 &1297826902387643527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5816761963758538202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e60b1187740cdfc49b66caf0ff14a3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 3
+  difficultyLevel: 2
+--- !u!114 &7580539056676656890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5816761963758538202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b5f0db56cf13e4bb3562631c6649b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpeed: 1
 --- !u!65 &6933338321771673140
 BoxCollider:
   m_ObjectHideFlags: 0

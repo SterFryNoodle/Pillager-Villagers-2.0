@@ -142,6 +142,6 @@ public class PathFinder : MonoBehaviour
     public void NotifyRecievers()
     {
         BroadcastMessage("RecalculatePath", false, SendMessageOptions.DontRequireReceiver); //String of function being broadcasted, and 2nd arguements allows to bypass requirements
-                                                                                     //to broadcast and will send message to all scripts anyway.
+                                                                                     //to broadcast and will send message to all scripts containing RecalculatePath anyway.
     }
 }
