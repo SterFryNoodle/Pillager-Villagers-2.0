@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7611836553692330960}
-  - component: {fileID: 8709840471317071219}
+  - component: {fileID: 8731521554419676694}
   - component: {fileID: 8330114630161580551}
   m_Layer: 0
   m_Name: ObjectPool_Enemy2
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8709840471317071219
+--- !u!114 &8731521554419676694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,12 +42,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4111177311229804404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ebc3fa675d56cb4eb0bc276727dead5, type: 3}
+  m_Script: {fileID: 11500000, guid: 12329c24b9498bd4caa35abc4a04238c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnTimer: 1
   poolSize: 5
-  enemyPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 6043755507018623398, guid: 6df86a85f7d2f9d448ff0ccb3f08c697, type: 3}
 --- !u!114 &8330114630161580551
 MonoBehaviour:
   m_ObjectHideFlags: 0

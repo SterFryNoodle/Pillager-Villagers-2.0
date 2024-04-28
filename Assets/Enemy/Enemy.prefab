@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b5f0db56cf13e4bb3562631c6649b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 1
+  enemySpeed: 0.75
 --- !u!114 &1297826902387643527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,8 +144,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e60b1187740cdfc49b66caf0ff14a3ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 2
-  difficultyLevel: 1
+  maxHitPoints: 3
+  difficultyLevel: 2
 --- !u!114 &-455762566937422051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74534c11e6592a45b2253bcee288053, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killReward: 25
-  goldPenalty: 50
+  killReward: 50
+  goldPenalty: 25
 --- !u!65 &6933338321771673140
 BoxCollider:
   m_ObjectHideFlags: 0
