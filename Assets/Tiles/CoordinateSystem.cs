@@ -21,7 +21,7 @@ public class CoordinateSystem : MonoBehaviour
     {
         gridManager = FindObjectOfType<GridManager>();
         labelCoords = GetComponent<TextMeshPro>();
-        labelCoords.enabled = false;
+        labelCoords.enabled = true;
         
         DisplayCoordinates(); //Displays current coords text once in play mode; Doesn't update.
     }
