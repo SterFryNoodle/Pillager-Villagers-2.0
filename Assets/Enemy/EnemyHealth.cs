@@ -6,15 +6,18 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField][Range(0,10)] int maxHitPoints = 2;
-
     [Tooltip("Adds amount of hp when enemies die.")]
     [SerializeField] int difficultyLevel = 1;
+    [SerializeField] AudioClip zombieGrunt;
+    
     int currentHitPoints;
     Enemy enemy;
+    AudioSource audioSource;
 
     void Start()
     {
-        enemy = GetComponent<Enemy>();  
+        enemy = GetComponent<Enemy>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void OnEnable() //Resets the function everytime the gameObject attached is re-enabled.
@@ -24,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
     
     void OnParticleCollision(GameObject other)
     {
+        PlayEnemyDamageSFX();
         DamageEnemy();
     }
 
@@ -36,6 +40,14 @@ public class EnemyHealth : MonoBehaviour
             gameObject.SetActive(false);
             maxHitPoints += difficultyLevel;
             enemy.RewardGold();
+        }
+    }
+
+    void PlayEnemyDamageSFX()
+    {
+        if(!audioSource.isPlaying && gameObject.tag == "Zombie")
+        {
+            audioSource.PlayOneShot(zombieGrunt);
         }
     }
 }
