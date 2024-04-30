@@ -8,8 +8,10 @@ public class CurrencySystem : MonoBehaviour
 {
     [SerializeField] int startingBalance = 150;
     [SerializeField] TextMeshProUGUI currencyDisplay;
+    [SerializeField] TextMeshProUGUI loseText;
         
     int currentBalance;
+    float delayTime = 4f;
     
     public int CurrentBalance { get { return currentBalance; } } //Creates a property of the private variable currentBalance.
 
@@ -33,13 +35,19 @@ public class CurrencySystem : MonoBehaviour
 
         if (currentBalance < 0)
         {
-            ReloadScene();
+            DisplayLoseCondition();
+            Invoke("ReloadScene" , delayTime);
         }        
     }
 
     void DisplayAvailableCurrency()
     {
         currencyDisplay.text = "Gold:" + currentBalance; //displays currency to UI.
+    }
+
+    void DisplayLoseCondition()
+    {
+        loseText.text = "Defeat";
     }
         
     void ReloadScene()
