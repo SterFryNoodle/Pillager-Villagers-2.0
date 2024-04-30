@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   killReward: 50
-  goldPenalty: 25
+  goldPenalty: 50
 --- !u!114 &1297826902387643527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 1
+  pathFinder: {fileID: 0}
 --- !u!65 &6933338321771673140
 BoxCollider:
   m_ObjectHideFlags: 0
