@@ -19,7 +19,7 @@ public class Tile : MonoBehaviour
         gridManager = FindObjectOfType<GridManager>();
         pathFinder = FindObjectOfType<PathFinder>();
         display = FindObjectOfType<DisplayInsufficientFunds>();
-
+        
         if (gridManager != null)
         {
             coordinates = gridManager.GetCoordsFromPosition(transform.position);
@@ -33,7 +33,7 @@ public class Tile : MonoBehaviour
         
     void OnMouseOver()
     {
-        if(Input.GetKeyDown(KeyCode.Alpha1))
+        if(Input.GetKeyUp(KeyCode.Alpha1))
         {
             if (gridManager.GetNode(coordinates).isTreadable && !pathFinder.WillBlockPath(coordinates))
             {
@@ -51,7 +51,7 @@ public class Tile : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyUp(KeyCode.Alpha2))
         {
             if (gridManager.GetNode(coordinates).isTreadable && !pathFinder.WillBlockPath(coordinates))
             {

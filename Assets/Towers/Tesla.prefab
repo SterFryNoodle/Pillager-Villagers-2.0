@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3078132489820252947}
   - component: {fileID: -5998136533939974686}
-  - component: {fileID: 2684349330285324674}
+  - component: {fileID: -1376175158867625836}
   - component: {fileID: -8020491570462275938}
   m_Layer: 0
   m_Name: Tesla
@@ -137,7 +137,7 @@ MonoBehaviour:
   weaponSound: {fileID: 8300000, guid: 5553deaa7fe820842abb4bce9dda7563, type: 3}
   ammoParticles: {fileID: 5134700763979123239}
   weapon: {fileID: 1297191175413380704}
---- !u!114 &2684349330285324674
+--- !u!114 &-1376175158867625836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,7 +275,7 @@ Transform:
   m_GameObject: {fileID: 8502346001565118299}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
