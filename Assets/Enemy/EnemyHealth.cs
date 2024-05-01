@@ -26,14 +26,14 @@ public class EnemyHealth : MonoBehaviour
     }
     
     void OnParticleCollision(GameObject other)
-    {
-        PlayEnemyDamageSFX();
+    {        
         DamageEnemy();
     }
 
     void DamageEnemy()
     {
         currentHitPoints--;
+        PlayEnemyDamageSFX();
 
         if (currentHitPoints <= 0)
         {
@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
 
     void PlayEnemyDamageSFX()
     {
-        if(!audioSource.isPlaying && gameObject.tag == "Zombie")
+        if(!audioSource.isPlaying && gameObject.tag == "Zombie" && gameObject.activeInHierarchy == true)
         {
             audioSource.PlayOneShot(zombieGrunt);
         }

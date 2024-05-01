@@ -28434,6 +28434,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2084370219}
     - target: {fileID: 4428870611807217544, guid: 7a9983ce9ca7c464390a092012465a9c, type: 3}
+      propertyPath: startingBalance
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4428870611807217544, guid: 7a9983ce9ca7c464390a092012465a9c, type: 3}
       propertyPath: insufficientCurrency
       value: 
       objectReference: {fileID: 466368148}

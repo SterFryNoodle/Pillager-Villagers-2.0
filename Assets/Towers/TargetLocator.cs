@@ -6,9 +6,17 @@ public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float towerRange = 15f;
+    [SerializeField] AudioClip crossbowShot;
     [SerializeField] ParticleSystem boltParticles;
     [SerializeField] Transform weapon;
-        
+
+    AudioSource weaponSource;
+
+    void Start()
+    {
+        weaponSource = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         FindClosestTarget();
@@ -41,6 +49,7 @@ public class TargetLocator : MonoBehaviour
         if(targetDistance < towerRange) //fix bug of towers attacking enemies after they are disabled.
         {
             Attack(true);
+            
         }
         else if(targetDistance > towerRange || target.position == null)
         {
@@ -53,6 +62,15 @@ public class TargetLocator : MonoBehaviour
     void Attack(bool isActive)
     {
         var enableEmission = boltParticles.emission;
-        enableEmission.enabled = isActive; 
+        enableEmission.enabled = isActive;
+        CrossbowSFX();
+    }
+
+    void CrossbowSFX()
+    {
+        if (!weaponSource.isPlaying && boltParticles.emission.enabled == true)
+        {
+            weaponSource.PlayOneShot(crossbowShot);
+        }
     }
 }
