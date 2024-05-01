@@ -6,8 +6,8 @@ public class TargetLocator : MonoBehaviour
 {
     [SerializeField] Transform target;
     [SerializeField] float towerRange = 15f;
-    [SerializeField] AudioClip crossbowShot;
-    [SerializeField] ParticleSystem boltParticles;
+    [SerializeField] AudioClip weaponSound;
+    [SerializeField] ParticleSystem ammoParticles;
     [SerializeField] Transform weapon;
 
     AudioSource weaponSource;
@@ -61,16 +61,16 @@ public class TargetLocator : MonoBehaviour
 
     void Attack(bool isActive)
     {
-        var enableEmission = boltParticles.emission;
+        var enableEmission = ammoParticles.emission;
         enableEmission.enabled = isActive;
-        CrossbowSFX();
+        WeaponSFX();
     }
 
-    void CrossbowSFX()
+    void WeaponSFX()
     {
-        if (!weaponSource.isPlaying && boltParticles.emission.enabled == true)
+        if (!weaponSource.isPlaying && ammoParticles.emission.enabled == true)
         {
-            weaponSource.PlayOneShot(crossbowShot);
+            weaponSource.PlayOneShot(weaponSound);
         }
     }
 }
