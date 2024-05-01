@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnTimer: 2
   poolSize: 8
-  enemyPrefab: {fileID: 5816761963758538202, guid: 3a4cc92317e0eec4a9dc45cbc366db70, type: 3}
-  enemyPrefab2: {fileID: 6043755507018623398, guid: 6df86a85f7d2f9d448ff0ccb3f08c697, type: 3}
+  enemyPrefab: {fileID: 6043755507018623398, guid: 6df86a85f7d2f9d448ff0ccb3f08c697, type: 3}
+  enemyPrefab2: {fileID: 5816761963758538202, guid: 3a4cc92317e0eec4a9dc45cbc366db70, type: 3}
 --- !u!114 &2301950707820117950
 MonoBehaviour:
   m_ObjectHideFlags: 0

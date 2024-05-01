@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))] //Adds a script component requirement which includes both scripts when adding this script to an object.
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField][Range(0,10)] int maxHitPoints = 2;
+    [SerializeField][Range(0,5)] int maxHitPoints = 2;
     [Tooltip("Adds amount of hp when enemies die.")]
     [SerializeField] int difficultyLevel = 1;
     [SerializeField] AudioClip zombieGrunt;
@@ -45,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
 
     void PlayEnemyDamageSFX()
     {
-        if(!audioSource.isPlaying && gameObject.tag == "Zombie" && gameObject.activeInHierarchy == true)
+        if(!audioSource.isPlaying && gameObject.CompareTag("Zombie") && gameObject.activeInHierarchy)
         {
             audioSource.PlayOneShot(zombieGrunt);
         }

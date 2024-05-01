@@ -5985,17 +5985,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6664489694960312428, guid: 9d5f305de20253a4b87d3acb2013b917, type: 3}
   m_PrefabInstance: {fileID: 463117252}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &466368148 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7916907564858109165, guid: fe377a4581c9d8644bf2c74cc7ae8d10, type: 3}
-  m_PrefabInstance: {fileID: 975728596933860211}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &470429552
 GameObject:
   m_ObjectHideFlags: 0
@@ -28196,22 +28185,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
-      propertyPath: endPt.y
-      value: 17
-      objectReference: {fileID: 0}
-    - target: {fileID: 2301950707820117950, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
-      propertyPath: startingPt.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6969577949736816903, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
-      propertyPath: enemyPrefab
-      value: 
-      objectReference: {fileID: 6043755507018623398, guid: 6df86a85f7d2f9d448ff0ccb3f08c697, type: 3}
-    - target: {fileID: 6969577949736816903, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
-      propertyPath: enemyPrefab2
-      value: 
-      objectReference: {fileID: 5816761963758538202, guid: 3a4cc92317e0eec4a9dc45cbc366db70, type: 3}
     - target: {fileID: 7635701345760636727, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: m_Name
       value: ObjectPool
@@ -28272,10 +28245,6 @@ PrefabInstance:
     - target: {fileID: 895858598190947730, guid: fe377a4581c9d8644bf2c74cc7ae8d10, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3312104741808135691, guid: fe377a4581c9d8644bf2c74cc7ae8d10, type: 3}
-      propertyPath: m_text
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6065604021130864141, guid: fe377a4581c9d8644bf2c74cc7ae8d10, type: 3}
       propertyPath: m_Pivot.x
@@ -28433,14 +28402,6 @@ PrefabInstance:
       propertyPath: currencyDisplay
       value: 
       objectReference: {fileID: 2084370219}
-    - target: {fileID: 4428870611807217544, guid: 7a9983ce9ca7c464390a092012465a9c, type: 3}
-      propertyPath: startingBalance
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 4428870611807217544, guid: 7a9983ce9ca7c464390a092012465a9c, type: 3}
-      propertyPath: insufficientCurrency
-      value: 
-      objectReference: {fileID: 466368148}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

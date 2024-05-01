@@ -6,7 +6,7 @@ using TMPro;
 
 public class CurrencySystem : MonoBehaviour
 {
-    [SerializeField] int startingBalance = 150;
+    [SerializeField] int startingBalance = 300;
     [SerializeField] TextMeshProUGUI currencyDisplay;
     [SerializeField] TextMeshProUGUI loseText;
         
