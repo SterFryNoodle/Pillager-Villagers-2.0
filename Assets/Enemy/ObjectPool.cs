@@ -8,6 +8,7 @@ public class ObjectPool : MonoBehaviour
     [SerializeField][Range(0, 50)] int poolSize = 5;
     [SerializeField] GameObject enemyPrefab;
     [SerializeField] GameObject enemyPrefab2;
+    [SerializeField] GameObject enemyPrefab3;
 
     //int waveCounter;
 
@@ -62,6 +63,11 @@ public class ObjectPool : MonoBehaviour
             if(i % 3 == 0)
             {
                 pool[i] = Instantiate(enemyPrefab2, transform);
+                pool[i].SetActive(false);
+            }
+            else if(i % 5 == 0)
+            {
+                pool[i] = Instantiate(enemyPrefab3, transform);
                 pool[i].SetActive(false);
             }
             else

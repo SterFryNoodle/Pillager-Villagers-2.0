@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd817905f22fecd47bda837b335281eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 4774564251958329481, guid: 3a4cc92317e0eec4a9dc45cbc366db70, type: 3}
+  target: {fileID: 1530933168255232350, guid: 6df86a85f7d2f9d448ff0ccb3f08c697, type: 3}
   towerRange: 25
   weaponSound: {fileID: 8300000, guid: 5553deaa7fe820842abb4bce9dda7563, type: 3}
   ammoParticles: {fileID: 5134700763979123239}

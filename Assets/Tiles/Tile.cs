@@ -19,7 +19,7 @@ public class Tile : MonoBehaviour
         gridManager = FindObjectOfType<GridManager>();
         pathFinder = FindObjectOfType<PathFinder>();
         display = FindObjectOfType<DisplayInsufficientFunds>();
-        
+                
         if (gridManager != null)
         {
             coordinates = gridManager.GetCoordsFromPosition(transform.position);

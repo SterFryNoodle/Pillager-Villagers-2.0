@@ -28185,6 +28185,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6969577949736816903, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
+      propertyPath: poolSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6969577949736816903, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
+      propertyPath: enemyPrefab3
+      value: 
+      objectReference: {fileID: 4289564797638545986, guid: da267c50ad789734dabf9b662c752228, type: 3}
     - target: {fileID: 7635701345760636727, guid: db8934d6c5eb73846a6c95bcc22f508a, type: 3}
       propertyPath: m_Name
       value: ObjectPool
