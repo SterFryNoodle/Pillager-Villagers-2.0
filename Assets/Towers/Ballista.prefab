@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goldCost: 150
   buildTimer: 2
+  towerConstruction: {fileID: 8300000, guid: f43d903b8c7511242a846670ae95c8cd, type: 3}
 --- !u!82 &7527960706644066620
 AudioSource:
   m_ObjectHideFlags: 0
